@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sarina and Brynna Take on SF</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <p class="brand">Sarina and Brynna Take on SF</p>
+    <nav aria-label="Site">
+      <a href="#map" data-view="map">Map</a>
+      <a href="#about" data-view="about">About</a>
+    </nav>
+  </header>
+
+  <div id="map-view" class="app">
+    <section class="map-pane" aria-label="Neighborhood map">
+      <div class="map-stage">
+        <img id="map-image" src="sf_map.png" alt="Map of San Francisco neighborhoods" width="1088" height="976">
+        <canvas id="highlight" aria-hidden="true"></canvas>
+      </div>
+      <p class="map-hint" id="map-hint">Click a neighborhood</p>
+    </section>
+    <aside class="sidebar">
+      <header class="sidebar-header">
+        <h1>Neighborhoods</h1>
+        <p>Click a neighborhood on the map to see a short profile.</p>
+      </header>
+      <div class="search-wrap">
+        <label for="search" class="sr-only">Search neighborhoods</label>
+        <input id="search" type="search" placeholder="Search neighborhoods" autocomplete="off">
+      </div>
+      <div id="profile" class="profile empty"></div>
+      <div class="list-wrap">
+        <h2>All neighborhoods</h2>
+        <ul class="hood-list" id="hood-list"></ul>
+      </div>
+    </aside>
+  </div>
+
+  <main id="about-view" class="about-view" hidden>
+    <div id="about-content" class="about-inner"></div>
+  </main>
+
+  <script src="neighborhoods.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
