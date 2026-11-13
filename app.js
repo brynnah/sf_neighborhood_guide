@@ -35,6 +35,9 @@ function mountHtml(container, html, pageUrl) {
     if (!value || /^(https?:|data:|mailto:|#)/.test(value)) return;
     el.setAttribute(attr, new URL(value, base).href);
   });
+  doc.querySelectorAll("img.neighborhood-photo").forEach((el) => {
+    el.addEventListener("error", () => el.remove());
+  });
   container.replaceChildren(...doc.body.childNodes);
 }
 
